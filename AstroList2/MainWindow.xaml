@@ -5,8 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AstroList2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+                Title="Astro List" Height="400" Width="650" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+
+
+    <Window.Background>
+        <ImageBrush ImageSource="/Images/background.jpg"/>
+    </Window.Background>
+
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <ListBox Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" x:Name="planetsListBox" Margin="10" SelectionChanged="OnPlanetSelectionChanged"/>
+        <Button Grid.Row="0" Grid.Column="1" x:Name="moveUpButton" Content="▲" Margin="5" Padding="25" VerticalAlignment="Bottom" Click="OnMoveUpButtonClicked"/>
+        <Button Grid.Row="1" Grid.Column="1" x:Name="moveDownButton" Content="▼" Margin="5" Padding="25" VerticalAlignment="Top" Click="OnMoveDownButtonClicked"/>
+        <StackPanel Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Margin="10" Orientation="Vertical">
+            <Label Content="Naam:" Foreground="LightGoldenrodYellow"/>
+            <TextBox x:Name="nameTextBox" Text="nameTextBox" Margin="5" IsReadOnly="True"/>
+            <Label Content="Grootte:" Foreground="LightGoldenrodYellow" Margin="5,10,5,5"/>
+            <WrapPanel Orientation="Horizontal">
+                <RadioButton x:Name="smalRadioButton" Content="Klein" HorizontalAlignment="Left" Margin="5" Foreground="LightGoldenrodYellow"/>
+                <RadioButton x:Name="mediumRadioButton" Content="Middelgroot" HorizontalAlignment="Center" Margin="5" Foreground="LightGoldenrodYellow"/>
+                <RadioButton x:Name="largeRadioButton" Content="Groot" HorizontalAlignment="Right" Margin="5" Foreground="LightGoldenrodYellow"/>
+            </WrapPanel>
+            <Label Content="Temperatuur:" Foreground="LightGoldenrodYellow" Margin="5,10,5,5"/>
+            <TextBox x:Name="temperatureTextBox" Text="temperatureTextBox" Margin="5" IsReadOnly="True"/>
+            <CheckBox x:Name="ringsCheckBox" Content="Heeft ringen" Margin="5" Foreground="LightGoldenrodYellow"/>
+            <CheckBox x:Name="atmosphereCheckBox" Content="Heeft atmosfeer" Margin="5" Foreground="LightGoldenrodYellow"/>
+            <CheckBox x:Name="moonsCheckBox" Content="Heeft manen" Margin="5" Foreground="LightGoldenrodYellow"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Margin="10" Orientation="Horizontal">
+            <Image x:Name="sunImage" Source="/Images/sun.png" Height="50" Width="50"/>
+            <Canvas x:Name="distanceCanvas" Width="150"/>
+            <Button x:Name="planetButton" Visibility="Hidden" Background="Transparent" Click="OnPlanetButtonClicked">
+                <Image x:Name="planetImage" Width="50" Height="50" />
+            </Button>
+        </StackPanel>
 
     </Grid>
 </Window>

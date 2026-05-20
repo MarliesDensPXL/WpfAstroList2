@@ -8,4 +8,30 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Images\background.jpg" />
+    <None Remove="Images\earth.png" />
+    <None Remove="Images\jupiter.png" />
+    <None Remove="Images\mars.png" />
+    <None Remove="Images\mercury.png" />
+    <None Remove="Images\neptune.png" />
+    <None Remove="Images\saturn.png" />
+    <None Remove="Images\sun.png" />
+    <None Remove="Images\uranus.png" />
+    <None Remove="Images\venus.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\background.jpg" />
+    <Resource Include="Images\earth.png" />
+    <Resource Include="Images\jupiter.png" />
+    <Resource Include="Images\mars.png" />
+    <Resource Include="Images\mercury.png" />
+    <Resource Include="Images\neptune.png" />
+    <Resource Include="Images\saturn.png" />
+    <Resource Include="Images\sun.png" />
+    <Resource Include="Images\uranus.png" />
+    <Resource Include="Images\venus.png" />
+  </ItemGroup>
+
 </Project>
