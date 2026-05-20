@@ -32,15 +32,15 @@
             <TextBox x:Name="nameTextBox" Text="nameTextBox" Margin="5" IsReadOnly="True"/>
             <Label Content="Grootte:" Foreground="LightGoldenrodYellow" Margin="5,10,5,5"/>
             <WrapPanel Orientation="Horizontal">
-                <RadioButton x:Name="smalRadioButton" Content="Klein" HorizontalAlignment="Left" Margin="5" Foreground="LightGoldenrodYellow"/>
-                <RadioButton x:Name="mediumRadioButton" Content="Middelgroot" HorizontalAlignment="Center" Margin="5" Foreground="LightGoldenrodYellow"/>
-                <RadioButton x:Name="largeRadioButton" Content="Groot" HorizontalAlignment="Right" Margin="5" Foreground="LightGoldenrodYellow"/>
+                <RadioButton x:Name="smalRadioButton" Content="Klein" HorizontalAlignment="Left" Margin="5" Foreground="LightGoldenrodYellow" IsEnabled="False" />
+                <RadioButton x:Name="mediumRadioButton" Content="Middelgroot" HorizontalAlignment="Center" Margin="5" Foreground="LightGoldenrodYellow" IsEnabled="False"/>
+                <RadioButton x:Name="largeRadioButton" Content="Groot" HorizontalAlignment="Right" Margin="5" Foreground="LightGoldenrodYellow" IsEnabled="False"/>
             </WrapPanel>
             <Label Content="Temperatuur:" Foreground="LightGoldenrodYellow" Margin="5,10,5,5"/>
             <TextBox x:Name="temperatureTextBox" Text="temperatureTextBox" Margin="5" IsReadOnly="True"/>
-            <CheckBox x:Name="ringsCheckBox" Content="Heeft ringen" Margin="5" Foreground="LightGoldenrodYellow"/>
-            <CheckBox x:Name="atmosphereCheckBox" Content="Heeft atmosfeer" Margin="5" Foreground="LightGoldenrodYellow"/>
-            <CheckBox x:Name="moonsCheckBox" Content="Heeft manen" Margin="5" Foreground="LightGoldenrodYellow"/>
+            <CheckBox x:Name="ringsCheckBox" Content="Heeft ringen" Margin="5" Foreground="LightGoldenrodYellow" IsEnabled="False"/>
+            <CheckBox x:Name="atmosphereCheckBox" Content="Heeft atmosfeer" Margin="5" Foreground="LightGoldenrodYellow" IsEnabled="False"/>
+            <CheckBox x:Name="moonsCheckBox" Content="Heeft manen" Margin="5" Foreground="LightGoldenrodYellow" IsEnabled="False"/>
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Margin="10" Orientation="Horizontal">
             <Image x:Name="sunImage" Source="/Images/sun.png" Height="50" Width="50"/>
