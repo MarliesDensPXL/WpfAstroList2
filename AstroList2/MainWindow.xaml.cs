@@ -123,7 +123,7 @@ namespace AstroList2
                 _planets[index + 1] = planetToMove;
 
                 DisplayPlanets();
-
+                 
                 planetsListBox.SelectedItem = _planets[index + 1];
             }
         }
