@@ -90,79 +90,42 @@ namespace AstroList2
 
         private void OnMoveUpButtonClicked(object sender, RoutedEventArgs e)
 
+            
+
         //lijst van planeten heeft zelfde volgorde als de listbox 
 
         //geselecteerde planeet even aan de kant zetten (zie pokemon-oef) daarna de planeet erboven één index naar beneden. Dan de aan de kant gezette planeet op de index - 1 zetten.
         {
-            Planet selectedPlanet = (Planet)planetsListBox.SelectedItem;
+            int index = planetsListBox.SelectedIndex;
 
-            int index = _planets.IndexOf(selectedPlanet);
 
-            //int indexOfPlanet = planetsListBox.SelectedIndex;
-
-            if (index == 0)
+            if (index != 0)
             {
-                index = _planets.Count - 1;
+                Planet planetToMove = _planets[index];
+                _planets[index] = _planets[index - 1];
+                _planets[index - 1] = planetToMove;
+
+
+                DisplayPlanets();
+
+                planetsListBox.SelectedItem = _planets[index - 1];
             }
-            else
-            {
-                index -= 1;
-            }
-
-            planetsListBox.SelectedIndex = index;
-
-            //DisplayPlanets();
-
-
-            //    Planet selectedPlanet = (Planet)planetsListBox.SelectedItem;
-
-            //if (selectedPlanet == null)
-            //{
-            //    return;
-            //}
-
-            //int index = _planets.IndexOf(selectedPlanet);
-            //int newIndex;
-
-            //if (index == 0)
-            //{
-            //    newIndex = (_planets.Count - 1);
-            //    selectedPlanet = _planets[_planets.Count -1];
-            //}
-            //else
-            //{
-            //    newIndex = index - 1;
-            //    selectedPlanet = _planets[index - 1];
-            //}
-
-            //// _planets = PlanetData.GetPlanetsInRandomOrder();
-            //DisplayPlanets();
-
-            //planetsListBox.SelectedIndex = newIndex;
         }
 
         private void OnMoveDownButtonClicked(object sender, RoutedEventArgs e)
         {
-            Planet selectedPlanet = (Planet)planetsListBox.SelectedItem;
-
-            if (selectedPlanet == null)
-            {
-                return;
-            }
-
             int index = planetsListBox.SelectedIndex;
 
-            if (index == (_planets.Count - 1))
+            if (index != (_planets.Count-1))
             {
-                index = 0;
-            }
-            else
-            {
-                index += 1;
-            }
+                Planet planetToMove = _planets[index];
+                _planets[index] = _planets[index + 1];
+                _planets[index + 1] = planetToMove;
 
-            DisplayPlanets();
+                DisplayPlanets();
 
+                planetsListBox.SelectedItem = _planets[index + 1];
+            }
         }
 
         private void OnPlanetButtonClicked(object sender, RoutedEventArgs e)
@@ -170,7 +133,7 @@ namespace AstroList2
             Planet selectedPlanet = (Planet)planetsListBox.SelectedItem;
             int days = selectedPlanet.CalculateTravelTimeFromSunToPlanetInDays(40000);
 
-            MessageBox.Show($"Het duurt {days} dagen om met een raket van de zon naar {selectedPlanet.Name} te reizen.");
+            MessageBox.Show($"Het duurt {days} dagen om met een raket van de zon naar {selectedPlanet.Name} te reizen.", "Reistijd", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }
