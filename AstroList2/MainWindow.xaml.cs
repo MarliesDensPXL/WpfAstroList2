@@ -34,6 +34,11 @@ namespace AstroList2
             planetButton.Visibility = Visibility.Visible;
             planetImage.Source = new BitmapImage(new Uri($"Images/{fileName}", UriKind.Relative));
             planetImage.Stretch = Stretch.Uniform;
+
+            //100%
+            double maxWidth = imageStackPanel.ActualWidth - sunImage.ActualWidth - planetButton.ActualWidth;
+            distanceCanvas.Width =  (distance / 5000000000) * maxWidth;
+
         }
 
         public void DisplayPlanets()
@@ -82,15 +87,11 @@ namespace AstroList2
             //    moonsCheckBox.IsChecked = true;
             //}
 
-
-
-
             DisplayImage(selectedPlanet.ImageName, selectedPlanet.DistanceFromSunInKm);
         }
 
         private void OnMoveUpButtonClicked(object sender, RoutedEventArgs e)
-
-            
+          
 
         //lijst van planeten heeft zelfde volgorde als de listbox 
 
@@ -98,13 +99,11 @@ namespace AstroList2
         {
             int index = planetsListBox.SelectedIndex;
 
-
             if (index != 0)
             {
                 Planet planetToMove = _planets[index];
                 _planets[index] = _planets[index - 1];
                 _planets[index - 1] = planetToMove;
-
 
                 DisplayPlanets();
 

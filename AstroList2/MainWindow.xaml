@@ -42,7 +42,7 @@
             <CheckBox x:Name="atmosphereCheckBox" Content="Heeft atmosfeer" Margin="5" Foreground="LightGoldenrodYellow" IsEnabled="False"/>
             <CheckBox x:Name="moonsCheckBox" Content="Heeft manen" Margin="5" Foreground="LightGoldenrodYellow" IsEnabled="False"/>
         </StackPanel>
-        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Margin="10" Orientation="Horizontal">
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" x:Name="imageStackPanel" Margin="10" Orientation="Horizontal">
             <Image x:Name="sunImage" Source="/Images/sun.png" Height="50" Width="50"/>
             <Canvas x:Name="distanceCanvas" Width="150"/>
             <Button x:Name="planetButton" Visibility="Hidden" Background="Transparent" Click="OnPlanetButtonClicked">
