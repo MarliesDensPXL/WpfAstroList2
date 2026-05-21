@@ -98,6 +98,11 @@ namespace AstroList2
         {
             int index = planetsListBox.SelectedIndex;
 
+            if (index == -1)
+            {
+                return;
+            }
+
             if (index != 0)
             {
                 Planet planetToMove = _planets[index];
@@ -113,6 +118,11 @@ namespace AstroList2
         private void OnMoveDownButtonClicked(object sender, RoutedEventArgs e)
         {
             int index = planetsListBox.SelectedIndex;
+
+            if (index == -1)
+            {
+                return;
+            }
 
             if (index != (_planets.Count-1))
             {
