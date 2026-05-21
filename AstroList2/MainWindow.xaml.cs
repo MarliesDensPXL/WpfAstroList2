@@ -37,8 +37,7 @@ namespace AstroList2
 
             //100%
             double maxWidth = imageStackPanel.ActualWidth - sunImage.ActualWidth - planetButton.ActualWidth;
-            distanceCanvas.Width =  (distance / 5000000000) * maxWidth;
-
+            distanceCanvas.Width =  (distance / 5000000000d) * maxWidth;
         }
 
         public void DisplayPlanets()
